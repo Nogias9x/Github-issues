@@ -1,0 +1,20 @@
+.loadMoreBtn {
+  background: #16d47b;
+  width: 70px;
+  min-height: 20px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 20px;
+}
+
+.loadMoreBtn p {
+  font-family: 'Abel', sans-serif;
+  font-size:15px;
+  padding: 10px;
+}
+
+.loadMoreBtn:hover {
+  opacity: 0.8;
+}

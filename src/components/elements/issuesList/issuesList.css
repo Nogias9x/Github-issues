@@ -1,0 +1,6 @@
+.segmentsList:hover, .segmentsList.selected {
+  background: #16d47b;
+  color: white;
+  cursor: pointer;
+  width: 70%;
+}
