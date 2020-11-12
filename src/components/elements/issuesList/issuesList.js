@@ -13,13 +13,19 @@ class IssuesList extends Component {
       isLoading: false,
       error: null,
       currentIssues: 5,
-      activeIssues: -1,
+      activeIssue: null,
     };
     this.loadMore = this.loadMore.bind(this);
+    this.onClickHighlight = this.onClickHighlight.bind(this);
   }
-
-  onClickFunction = (highlight) => {
-    this.setState({activeIssues: highlight})
+    
+  onClickHighlight(issueID) {
+    if (issueID === this.state.activeIssue ) {
+      this.setState({ activeIssue: null });
+    } else {
+      this.setState({ activeIssue: issueID});
+    }
+    
   }
 
   loadMore() {
@@ -37,11 +43,9 @@ class IssuesList extends Component {
         return response.json();
       } else {
         throw new Error('Something went wrong...');
-      }
-    })
+      }})
     .then(data =>{this.setState({ issues: data, isLoading: false })})
     .catch(error => this.setState({ error, isLoading: false}));
-
   }
 
   render() {
@@ -60,10 +64,12 @@ class IssuesList extends Component {
         <ul>  
           {issues.slice(0, this.state.currentIssues).map(issues =>
             <li key={issues.objectID}
-                onClick={this.onClickFunction}
-                className={`segmentsList${this.state.activeIssues === issues ? 'selected' : ''}`}            
+            className={`segmentsList${this.state.activeIssue === issues.id ? 'Selected' : ''}`}
+            onClick={() => {
+              this.onClickHighlight(issues.id)
+            }}
             >
-              <p>ID: {issues.id}</p>
+              <p>ID: {issues.id} </p>
               <p>Title: {issues.title}</p>
             </li>
             )}

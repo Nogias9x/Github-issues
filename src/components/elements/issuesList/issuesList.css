@@ -1,6 +1,11 @@
-.segmentsList:hover, .segmentsList.selected {
-  background: #16d47b;
+.segmentsListSelected {
+  background:#1bae61;
   color: white;
   cursor: pointer;
   width: 70%;
+}
+.segmentsList {
+  background: white;
+  color: black;
+  cursor: pointer;
 }
