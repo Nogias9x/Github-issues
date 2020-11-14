@@ -1,5 +1,5 @@
 .loadMoreBtn {
-  background: #16d47b;
+  background: #1bae61;
   width: 70px;
   min-height: 20px;
   text-align: center;
@@ -10,8 +10,8 @@
 }
 
 .loadMoreBtn p {
-  font-family: 'Abel', sans-serif;
-  font-size:15px;
+  font-family: "Abel", sans-serif;
+  font-size: 15px;
   padding: 10px;
 }
 

@@ -1,0 +1,55 @@
+.notification {
+  background: #1bae61;
+  width: 100%;
+  color: #fff;
+}
+
+.notification-header {
+  display: flex;
+  position: relative;
+}
+
+.notification-button {
+  border-radius: 50%;
+  position: relative;
+  margin-left: auto;
+  width: 70px;
+  height: 70px;
+  border: none;
+}
+
+.notification-button i:hover {
+  opacity: 0.5;
+}
+
+.notification-button i {
+  position: absolute;
+  color: black;
+  top: 15%;
+}
+
+.notification-count {
+  position: absolute;
+  color: white;
+  top: 10%;
+  right: 25%;
+  background-color: red;
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.show {
+  position: absolute;
+  background-color: black;
+  width: 20%;
+  right: 2%;
+  top: 8%;
+  font-size: 15px;
+}
+
+.hidden {
+  display: none;
+}
