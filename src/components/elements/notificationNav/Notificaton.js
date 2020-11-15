@@ -19,7 +19,7 @@ const Notification = (props) => {
         <div className="show">
           {props.listIssue.map((item) => (
             <ul>
-              <li>{JSON.stringify(item)}</li>
+              <li>{item.Id}: {item.Title}</li>
             </ul>
           ))}
         </div>
