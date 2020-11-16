@@ -5,11 +5,16 @@ const issueReducers = (state = [], action) => {
   switch (action.type) {
     case ADD_ISSUE:
       let highlighted = [];
-      if (Array.isArray(state.highlighted) && state.highlighted.length < 5)
+      if (Array.isArray(state.highlighted)) {
         highlighted = [...state.highlighted];
-        highlighted.push(action.issue);
-      return { ...state, highlighted};
-
+        if (!highlighted.some((item) => item.Id === action.issue.Id)) {
+          if (state.highlighted.length === 5) {
+            highlighted.pop();
+          }
+          highlighted = [action.issue, ...highlighted];
+        }
+      }
+      return { ...state, highlighted };
     default:
       return { highlighted: [] };
   }
